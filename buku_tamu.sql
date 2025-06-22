@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 21, 2025 at 06:28 PM
+-- Generation Time: Jun 22, 2025 at 03:35 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,6 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `daftar_tamu`
+--
+
+CREATE TABLE `daftar_tamu` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `tujuan` varchar(50) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `no_wa` varchar(20) NOT NULL,
+  `pesan` text NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `daftar_tamu`
+--
+
+INSERT INTO `daftar_tamu` (`id`, `nama`, `email`, `tujuan`, `alamat`, `no_wa`, `pesan`, `tanggal`) VALUES
+(1, 'sumarwan', 'adadad@mail.com', 'dadada', '', '', 'dadi lah', '2025-06-20 20:41:23'),
+(2, 'sasasas', 'asas@mail.com', 'asasas', 'bumi gede', '135153535', 'fafff', '2025-06-22 11:58:09'),
+(3, 'da3252', '35252@mail.com', 'adda', 'dad', 'ada235253', 'dadadda', '2025-06-22 11:58:09');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pengguna`
 --
 
@@ -40,12 +66,20 @@ CREATE TABLE `pengguna` (
 --
 
 INSERT INTO `pengguna` (`id`, `nama`, `username`, `password`, `level`) VALUES
-(4, 'Avedora', 'Ave', '81dc9bdb52d04dc20036dbd8313ed055', 'admin'),
-(5, 'wili', 'wiliam', '81dc9bdb52d04dc20036dbd8313ed055', 'user');
+(1, 'Avedora', 'Ave', '81dc9bdb52d04dc20036dbd8313ed055', 'admin'),
+(2, 'wili', 'wiliam', '81dc9bdb52d04dc20036dbd8313ed055', 'user'),
+(7, 'nasar', 'nasar', '02265f3b103e00cf186146947d23df90', 'user'),
+(12, 'adnin', 'adnan', 'd1a0a9e9391af09e978c4c3d11711e75', 'user');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `daftar_tamu`
+--
+ALTER TABLE `daftar_tamu`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pengguna`
@@ -60,10 +94,16 @@ ALTER TABLE `pengguna`
 --
 
 --
+-- AUTO_INCREMENT for table `daftar_tamu`
+--
+ALTER TABLE `daftar_tamu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
